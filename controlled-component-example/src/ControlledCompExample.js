@@ -20,14 +20,12 @@ class ControlledCompExample extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Full Name
+          <label>Full Name</label>
             <input
               type="text"
               value={this.state.fullName}
               onChange={this.handleFullNameChange}
               name="fullName" />
-          </label>
           <input type="submit" value="Submit" />
         </form>
       </div>
