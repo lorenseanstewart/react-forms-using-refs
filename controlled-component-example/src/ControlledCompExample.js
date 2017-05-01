@@ -14,12 +14,7 @@ class ControlledCompExample extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-
-    // node list looks like an array, but lacks array methods
-    const { pet } = this.form
-
-    // a set of radio can only have one value
-    console.log(pet, pet.value)
+    console.log(this.state.fullName)
   }
   render() {
     return (
