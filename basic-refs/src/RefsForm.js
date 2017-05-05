@@ -13,13 +13,13 @@ class RefsForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="fullname">Name</label>
+          <label>Name</label>
           <input
             ref={input => this.fullName = input}
             type="text"
             name="fullname"
             placeholder="Full Name"/>
-          <label htmlFor="petType">Pet Type</label>
+          <label>Pet Type</label>
           <select
             ref={select => this.petType = select}
             name="petType">
