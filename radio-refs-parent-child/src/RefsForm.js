@@ -17,23 +17,29 @@ class RefsForm extends Component {
         <form
           onSubmit={this.handleSubmit}
           ref={form => this.form = form}>
-          <label>
-            Cat
-            <input type="radio" value="cat" name="pet" />
-          </label>
-          <label>
-            Dog
-            <input type="radio" value="dog" name="pet" />
-          </label>
-          <label>
-            Ferret
-            <input type="radio" value="ferret" name="pet" />
-          </label>
+          <RadioSet
+            setName={'pet'}
+            setOptions={['cat', 'dog', 'ferret']} />
           <input type="submit" value="Submit" />
         </form>
       </div>
     );
   }
+}
+
+function RadioSet(props) {
+  return (
+    <div>
+      {props.setOptions.map(option => {
+        return (
+          <label key={option} style={{textTransform: 'capitalize'}}>
+            {option}
+            <input type="radio" value={option} name={props.setName} />
+          </label>
+        )
+      })}
+    </div>
+  );
 }
 
 export default RefsForm;
