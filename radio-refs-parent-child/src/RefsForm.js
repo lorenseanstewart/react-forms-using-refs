@@ -8,7 +8,8 @@ class RefsForm extends Component {
     //  it looks like an array, but lacks array methods
     const { pet } = this.form;
 
-    // a set of radios only has one value
+    // a set of radios has value property
+    // checkout out the log for proof
     console.log(pet, pet.value);
   }
   render() {
@@ -32,9 +33,14 @@ function RadioSet(props) {
     <div>
       {props.setOptions.map(option => {
         return (
-          <label key={option} style={{textTransform: 'capitalize'}}>
+          <label
+            key={option}
+            style={{textTransform: 'capitalize'}}>
             {option}
-            <input type="radio" value={option} name={props.setName} />
+            <input
+              type="radio"
+              value={option}
+              name={props.setName} />
           </label>
         )
       })}

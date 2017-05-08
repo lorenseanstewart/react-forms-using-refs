@@ -5,22 +5,25 @@ class RefsForm extends Component {
     e.preventDefault();
 
     // node list looks like an array, but lacks array methods
-    const { pet } = this.form
+    const { pet } = this.form;
 
     // convert node list to an array
     const checkboxArray = Array.prototype.slice.call(pet);
 
     // extract only the checked checkboxes
-    const checkedCheckboxes = checkboxArray.filter(input => input.checked)
-    console.log('checked array:', checkedCheckboxes)
+    const checkedCheckboxes = checkboxArray.filter(input => input.checked);
+    console.log('checked array:', checkedCheckboxes);
 
     // use .map() to extract the value from each checked checkbox
-    console.log('checked array values:', checkedCheckboxes.map(input => input.value))
+    const checkedCheckboxesValues = checkedCheckboxes.map(input => input.value);
+    console.log('checked array values:', checkedCheckboxesValues);
   }
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit} ref={form => this.form = form}>
+        <form
+          onSubmit={this.handleSubmit}
+          ref={form => this.form = form}>
           <label>
             Cat
             <input type="checkbox" value="cat" name="pet" />
