@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class RefsForm extends Component {
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
 
     //  extract the node list from the form
@@ -13,21 +13,17 @@ class RefsForm extends Component {
 
     // extract only the checked checkboxes
     const checkedCheckboxes = checkboxArray.filter(input => input.checked);
-    console.log('checked array:', checkedCheckboxes);
+    console.log("checked array:", checkedCheckboxes);
 
     // use .map() to extract the value from each checked checkbox
     const checkedCheckboxesValues = checkedCheckboxes.map(input => input.value);
-    console.log('checked array values:', checkedCheckboxesValues);
-  }
+    console.log("checked array values:", checkedCheckboxesValues);
+  };
   render() {
     return (
       <div>
-        <form
-          onSubmit={this.handleSubmit}
-          ref={form => this.form = form}>
-          <CheckboxSet
-            setName={'pet'}
-            setOptions={['cat', 'dog', 'ferret']} />
+        <form onSubmit={this.handleSubmit} ref={form => (this.form = form)}>
+          <CheckboxSet setName={"pet"} setOptions={["cat", "dog", "ferret"]} />
           <input type="submit" value="Submit" />
         </form>
       </div>
@@ -40,16 +36,11 @@ function CheckboxSet(props) {
     <div>
       {props.setOptions.map(option => {
         return (
-          <label
-            key={option}
-            style={{textTransform: 'capitalize'}}>
+          <label key={option} style={{ textTransform: "capitalize" }}>
             {option}
-            <input
-              type="checkbox"
-              value={option}
-              name={props.setName} />
+            <input type="checkbox" value={option} name={props.setName} />
           </label>
-        )
+        );
       })}
     </div>
   );

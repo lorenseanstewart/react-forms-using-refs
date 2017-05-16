@@ -4,7 +4,8 @@ class RefsForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    // node list looks like an array, but lacks array methods
+    //  extract the node list from the form
+    //  it looks like an array, but lacks array methods
     const { pet } = this.form;
 
     // convert node list to an array
